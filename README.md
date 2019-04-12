@@ -5,6 +5,8 @@
 This repository contains Jupyter notebooks used for teaching the Cambridge Digital Humanities 
 *'Introduction to Text-Mining with Python'*, a series of two workshops in the Cambridge Digital Humanities Learning 
 programme 2019.
+
+**Status: Draft. I'm still writing these notebooks. :)**
  
 ## Code details
 
