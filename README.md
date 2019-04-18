@@ -16,8 +16,12 @@ The aim of the code in this repository is to show basic text mining techniques
 to participants who are complete beginners to both text mining and coding. 
 As such, the notebooks are designed to be run as a teaching aid, not as a serious text analysis tool.
 
-The main library used in this repository is:
+The main libraries used in this repository are:
 * [Natural Language Toolkit](https://www.nltk.org/) (NLTK)
+* [SpaCy](https://spacy.io/) (a bit)
+* [Gensim](https://radimrehurek.com/gensim/)
+* [pyLDAvis](https://github.com/bmabey/pyLDAvis)
+* [Matplotlib](https://matplotlib.org/)
 
 ## Getting started
 
