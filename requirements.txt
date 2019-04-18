@@ -18,7 +18,6 @@ cymem==2.0.2
 decorator==4.4.0
 defusedxml==0.6.0
 docutils==0.14
-en-core-web-sm==2.1.0
 entrypoints==0.3
 funcy==1.12
 future==0.17.1
