@@ -2,8 +2,8 @@
 
 ## Introduction
 
-This repository contains Jupyter notebooks used for teaching the Cambridge 
-Digital Humanities *'Introduction to Text-Mining with Python'*, a series of two 
+This repository contains Jupyter notebooks used for teaching the [Cambridge 
+Digital Humanities](https://www.cdh.cam.ac.uk) *'Introduction to Text-Mining with Python'*, a series of two 
 workshops in the Cambridge Digital Humanities Learning programme 2019.
 
 The notebooks are designed to present material for face-to-face teaching and to 
@@ -16,12 +16,30 @@ extension material that we skipped over during the workshops but which is a
 source of deeper exploration into the topics for anyone with further interest 
 or more experience.
 
-**Status: Notebooks are ready for use. Please file bug reports and suggestions 
-in Issues.**
+**Please note that these are the notebooks for the 2019 version of this course. For the 2020 version, please see 
+[intro-to-text-mining-with-python-2020](https://github.com/mchesterkadwell/intro-to-text-mining-with-python-2020).**
+
+### Content
+
+The notebooks cover:
+
+*Workshop 1*
+* Basic Python (strings, lists, imports, functions, opening/reading files)
+* Steps in a text-mining pipeline for research
+* Basic text-mining concepts (tokenising, normalising, cleaning, stopwords)
+* Creating a frequency distribution and plotting the results
+
+*Workshop 2*
+* Introduction to topic modelling (bag-of-words, TF-IDF)
+* More basic Python (dictionaries, tuples)
+* More basic text-mining concepts (stemming, lemmatization, part-of-speech tagging)
+* A basic example of topic modelling using `gensim`
+* Visualising topic models with `pyLDAvis`
  
 ## Code Details
 
-[![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-368/)[![Python](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-373/)
+[![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-368/)
+[![Python](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-373/)
 
 The aim of the code in this repository is to show basic text-mining techniques 
 to participants who are complete beginners to both text mining and coding. 
@@ -63,109 +81,95 @@ Go to the [GitHub page](https://github.com/mchesterkadwell/intro-to-text-mining-
 where this code repository is kept. For a simple download, click the ‘Clone or 
 download’ green button, then pick 'Download ZIP'.
 
-![](readme-pics/download-zip.PNG)
+![](readme-pics/download-or-clone.png)
 
 Open the ZIP file that is downloaded. In most operating systems this will 
  automatically unzip it back into individual files. Move the folder to 
  somewhere you want to keep it, such as 'My Documents'. 
 
-(The more advanced method is to use git to clone the repository, but we won’t 
+(The more advanced method is to use `git` to clone the repository, but we won’t 
 cover that here.)
 
-### Quick Start: Run a Notebook Quickly in the Default (root) Environment 
+### Run Notebooks in a Dedicated Environment 
 
 In simple terms, an environment is like an isolated box in which to run a 
 notebook safe from interference by other notebooks. Anaconda provides one 
 default environment, called ‘root’, in which to get up and running quickly. 
 However, you should really make a new environment for each project (which may 
-have one or more related notebooks). See **Run Notebooks in a Dedicated 
-Environment** below. 
-
-For a quick start, you can run the notebooks in the ‘root’ environment. 
-
-In **Anaconda Navigator > Home** there is a card for Jupyter Notebook (not 
-JupyterLab). Click on the 'Launch' button. 
-
-![](readme-pics/launch-jupyter.PNG)
-
-This opens a web page at **http://localhost:8888/tree** that shows your whole file 
-system.  
-
-![](readme-pics/home-directory.PNG)
-
-Navigate to where you downloaded the notebooks, and click on one to run it in 
-the usual way. 
-
-![](readme-pics/jupyter-notebooks.PNG)
-
-#### Important Note about Required Packages 
-
-Many of the required packages (dependencies) for running these notebooks are 
-included with the Anaconda ‘root’ environment. However, several libraries like 
-`gensim` and `spacy` are not included. This means that some of the notebooks 
-might not fully work in the ‘root’ environment. 
-
-To install these packages you should create a new environment and install them 
-there (see next section). 
-
-### Recommended: Run Notebooks in a Dedicated Environment 
+have one or more related notebooks).
 
 In **Anaconda Navigator > Environments** click on the ‘Create’ button in the 
 bottom of the Environments list. 
 
-![](readme-pics/create.PNG)
+![](readme-pics/create.png)
 
 Type a name e.g. 'intro-to-text-mining', make sure that 'Python' is _checked_ 
 and under the dropdown pick '3.7'. Make sure that 'R' is left _unchecked_. 
 
 Then click the ‘Create’ button. 
 
-![](readme-pics/new-env.PNG)
+![](readme-pics/new-env.png)
 
 It will take a few seconds to set up...
 
-With your new environment selected, go back to **Anaconda Navigator > Home**, 
-and click the 'Install' button for Jupyter Notebook (not JupyterLab). 
-
-![](readme-pics/install-jupyter.PNG)
-
 Then in **Anaconda Navigator > Environments** make sure you have selected your 
-new environment. You will see a long list of new packages that have been installed. 
+new environment. 
 
-Go to the dropdown that says ‘Installed’ and change it to ‘All’. Then click in 
-the ‘Search Packages’ search box and type ‘gensim’. 
+On the right of the environment name is a small green play arrow. Click on it and pick ‘Open Terminal’ from the 
+dropdown.
 
-Tick the box on the left of ‘gensim’ and click the green ‘Apply’ button in the 
-bottom right-hand corner. 
+In the Terminal that opens type the following, and press return:
 
-A box will pop up that tells you a number of packages will be installed. 
-Click ‘Apply’. It will take a while to install the packages. 
+`conda install pip`
 
-![](readme-pics/install-gensim.PNG)
+![](readme-pics/conda-install-pip.png)
 
-Repeat this process for the following packages: `nltk`, `spacy`, `matplotlib`.  
+If you do not already have pip installed, it will install it. Otherwise it will give a message:
 
-Unfortunately, `pyldavis` (used for visualising the topic models) is not 
-easily available this way and we have to open the command line to install this. 
+`# All requested packages already installed.`
 
-On the right of the environment name is a small green play arrow. Click on it 
-and pick ‘Open in Terminal’ from the dropdown. 
+Then change directory to wherever you saved the notebooks folder by typing something like:
 
-In the terminal that opens type: 
+`cd \path\to\notebooks`
 
-`conda install -c conda-forge pyldavis`
+where `path\to\notebooks` is the filepath to wherever you’ve put the notebooks folder.
 
-![](readme-pics/install-pyldavis.PNG)
+If you are on a **Mac**, make sure to use forward slashes in the filepath instead e.g. `path/to/notebooks`
 
-When the prompt asks you to confirm, type ‘y’ for yes. 
+![](readme-pics/cd-directory.png)
 
-Finally, you can go to **Anaconda Navigator > Home** and click the Jupyter 
-Notebooks ‘launch’ button and navigate to the notebooks. 
+Then install all the dependencies by typing:
 
- 
+`pip install -r requirements.txt`
 
- 
+This should initiate a big list of downloads and will take a while to finish. Please be patient.
 
-  
+Finally, to launch the Jupyter notebook server type:
 
+`jupyter notebook`
 
+This opens a web page at **http://localhost:8888/tree** showing the project:
+
+![](readme-pics/jupyter-notebooks.png)
+
+If not, you can copy and paste one of the URLs in the Terminal window into your browser e.g. 
+http://localhost:8888/?token=ddb27d2a1a6cb29a3483c24d6ff9f7263eb9676f02d71075
+(This one will not work on your machine, as the token is unique every time.)
+
+When you are finished with the notebook, press **ctrl+c** to stop the notebook server. 
+
+You can close the Terminal window.
+
+### Starting the Notebook Server Again
+
+Next time you want to start the notebook server:
+
+In **Anaconda Navigator > Environments** make sure you have selected your new environment. 
+
+On the right of the environment name is a small green play arrow. Click on it and pick ‘Open Terminal’ from the 
+dropdown.
+ To launch the Jupyter notebook server type:
+
+`jupyter notebook`
+
+When you are finished with the notebook, press **ctrl+c** to stop the notebook server. You can close the Terminal window.
